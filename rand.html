@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Photag</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/full-slider.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Photag</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="rand.html">Randomize</a>
+                    </li>
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="creators.html">Creators</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Margin -->
+    <header id="myCarousel" class="carousel slide">
+        <div class="carousel-inner">
+            <div class="item active">
+                <!-- Set the first background image using inline CSS below. -->
+                <script type="text/javascript">
+                
+                    var imlocation = "rand_images/";
+                    var currentdate = 0;
+                    var image_number = 0;
+                    
+                    function ImageArray (n) {
+                        this.length = n;
+                    
+                        for (var i =1; i <= n; i++) {
+                            this[i] = ' ';
+                        }
+                    }
+                    
+                    function CharArray (n) {
+                        this.length = n;
+                    
+                        for (var i =1; i <= n; i++) {
+                            this[i] = ' ';
+                        }
+                    }
+                    
+                    var image = new ImageArray(15);
+                    image[0] = '1.jpg';
+                    image[1] = '2.jpg';
+                    image[2] = '3.jpg';
+                    image[3] = '4.jpg';
+                    image[4] = '5.jpg';
+                    image[5] = '6.jpg';
+                    image[6] = '7.jpg';
+                    image[7] = '8.jpg';
+                    image[8] = '9.jpg';
+                    image[9] = '10.jpg';
+                    image[10] = '11.jpg';
+                    image[11] = '12.jpg';
+                    image[12] = '13.jpg';
+                    image[13] = '14.jpg';
+                    image[14] = '15.jpg';
+                    
+                    /*fill in and fix later*/
+                    var descr = new CharArray(15);
+                    descr[0] = "Donner Summit Bridge, Donner Lake, California";
+                    descr[1] = "Mount Kilimanjaro, Tanzania";
+                    descr[2] = "Brooklyn, New York City, USA";
+                    descr[3] = "Southern China";
+                    descr[4] = "Hoher Kasten, Appenzell Alps, Switzerland";
+                    descr[5] = "Mount Fuji, Japan";
+                    descr[6] = "Mt. Rainier, Washington, USA";
+                    descr[7] = "Icefields Parkway, Alberta, Canada";
+                    descr[8] = "Great Horn, Auster-Skaftafellssysla, Iceland";
+                    descr[9] = "Mount Rainier, Washington";
+                    descr[10] = "Paris, France";
+                    descr[11] = "Mu Cang Chai District, Vietnam";
+                    descr[12] = "Lord Howe Island, Australia";
+                    descr[13] = "Ban Gioc, Vietnam";
+                    descr[14] = "Rosteinpass, Switzerland";
+                    
+                    var rand = 60/image.length;
+                    
+                    /*function randomimage() {
+ 	                    currentdate = new Date();
+ 	                    image_number = currentdate.getSeconds();
+ 	                    image_number = Math.floor(image_number/rand);
+                    	return(image[image_number]);
+                     }*/
+                     
+                     function randomnum() {
+ 	                    currentdate = new Date();
+ 	                    image_number = currentdate.getSeconds();
+ 	                    image_number = Math.floor(image_number/rand);
+                    	return(image_number);
+                     }
+                     
+                     //document.write("<div class="fill" style="background-image:url('" + imlocation + randomimage()+ "');"></div>");
+                     document.write("<img src='" + imlocation + image[randomnum()] + "'>");
+                     document.write("<div class=\"carousel-caption\"> <h2>" + descr[randomnum()] + "</h2> </div>");
+                </script>
+                
+            </div>
+        </div>
+    </header>
+
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Script to Activate the Carousel -->
+    <script>
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+    </script>
+
+</body>
+
+</html>
